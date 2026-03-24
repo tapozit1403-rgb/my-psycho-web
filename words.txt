@@ -1,0 +1,297 @@
+contradictory: סותר
+contrary: להפך, בניגוד ל-
+conversely: לעומת זאת
+in comparison: בהשוואה
+in contrast to: בניגוד ל-
+on the contrary: בניגוד לכך
+otherwise: אחרת
+rather: עדיף
+rather than: במקום, יותר מ-
+regardless: למרות, ללא קשר
+vice versa: להיפך
+whereas: בעוד ש-
+above: מעל
+across: בצד השני, לרוחב
+adjacent to: ליד
+against: כנגד, ממול
+ahead of: לפני, לפנים
+amid: בקרב, בין
+among: בקרב, בין
+beyond: מעבר
+opposite: מנוגד, ממול
+within: בתוך
+forward: קדימה, לפנים
+further: לקדם
+toward: אל, אל עבר
+upside down: הפוך
+currently: כרגע, נכון לעכשיו
+during: תוך כדי, במשך
+earlier: קודם לכן
+former: קודם, לשעבר
+further: בהמשך
+initially: בתחילה
+instantly: מיד
+presently: כעת
+previously: הקודם, לפני-כן
+prior to: קודם ל-, לפני
+simultaneously: בו זמנית
+since: מאז
+suddenly: לפתע
+while: בזמן ש-
+despite: למרות
+even so: אף על פי כן
+even though: למרות ש-
+however: למרות זאת
+nonetheless: למרות זאת
+additionally: בנוסף
+along with: יחד עם
+as well as: כמו גם
+aside from: חוץ מ-
+besides: בנוסף על
+besides: מלבד, חוץ מ-
+except: מלבד, חוץ מ-
+furthermore: זאת ועוד
+in addition: בנוסף
+not to mention: שלא לדבר על
+above all: מעל לכל
+absolutely: לחלוטין
+certainly: בהחלט, בוודאי
+chiefly: בעיקר
+either... or...: או... או...
+essentially: בעיקרו, במהותו
+in general: באופן כללי
+in particular: במיוחד
+incidentally: דרך אגב
+indeed: בהחלט
+markedly: בצורה ניכרת
+namely: במיוחד, כלומר
+neither... nor...: לא... ולא...
+notably: ראוי לציון
+particularly: במיוחד, בפרט
+primarily: בעיקר
+significantly: באופן משמעותי
+surely: ללא ספק
+surprisingly: במפתיע
+undoubtedly: ללא ספק
+whether... or...: בין אם... או...
+comparatively: באופן יחסי
+correspondingly: בהתאמה
+e.g.: לדוגמה
+equally: במידה שווה
+for instance: לדוגמה
+identically: באופן זהה
+in the same way: באותו אופן
+likewise: כמו-כן, באותו אופן
+similarly: באופן דומה
+such as: כמו למשל
+whom: מי
+even if: גם אם
+provided that: בתנאי ש-
+unless: אלא אם כן
+which: אשר, ש-
+consistently: בעקביות
+constantly: באופן קבוע
+every now and then: לפעמים
+for the most part: בדרך-כלל
+frequently: לעיתים קרובות
+hardly ever: כמעט אף פעם
+occasionally: מידי פעם
+once in a while: מידי פעם
+ordinarily: בדרך-כלל
+permanently: קבוע
+perpetually: נצחי, לנצח
+seldom: לעיתים רחוקות
+sometimes: לעיתים, לפעמים
+accordingly: בהתאם
+as a result: כתוצאה
+consequently: כתוצאה מכך
+for: מפני ש-
+hence: לפיכך, לכן
+led to: הוביל ל-
+subsequently: כתוצאה מכך
+thus: לכן, כך ש-
+altogether: בסך הכל
+besides: בכל מקרה
+i.e.: כלומר, לדוגמה
+overall: כולל, באופן כללי
+to sum up: כדי לסכם
+being that: מכיוון ש-
+due to: בגלל, לאור
+given that: בהתחשב בכך
+since: מכיוון ש-
+therefore: לכן
+albeit: אף על פי
+although: למרות ש-
+different from: שונה מ-
+instead: במקום
+instead of: במקום
+of course... but...: כמובן... אך...
+or: או
+than: מ-
+though: למרות ש-
+unlike: שלא כמו
+where: בעוד ש-
+yet: אך, אולם
+about: ליד, בערך
+along: לאורך
+alongside: לצד, במקביל
+around: מסביב
+at: אצל, ב-
+before: לפני, מול
+behind: מאחורי
+below: מתחת
+beneath: מתחת
+beside: ליד
+between: בין
+by: ליד, בסמוך ל-
+close: קרוב
+distant: מרוחק
+elsewhere: במקום אחר
+farther: הלאה, יותר
+from: מ-
+here: כאן
+in: בתוך
+in front of: בחזית של, מול
+inside: בתוך, פנים
+into: אל תוך
+latter: שני, אחרון
+near: קרוב
+nearby: ליד, קרוב
+next to: ליד
+of: של, מ-
+on: על
+on top of: על, מעל
+outside: בחוץ
+over: על, מעל
+under: מתחת
+underneath: מתחת
+up: למעלה
+where: היכן, איפה
+wherever: בכל מקום
+backward: לאחור
+down: למטה
+left: שמאלה
+right: ימינה
+sideways: הצידה
+upon: על
+after: אחרי
+afterwards: לאחר מכן
+as: כאשר
+as long as: כל עוד
+as soon as: ברגע ש-
+at first: בהתחלה
+at last: סוף סוף
+before: לפני
+by: עד
+eventually: לבסוף
+finally: סוף סוף
+first of all: ראשית
+from: מ-
+immediately: מיד
+in a moment: בעוד רגע
+in due time: בבוא העת
+last: אחרון
+later: מאוחר יותר
+meanwhile: בינתיים
+next: הבא
+now: עכשיו
+once: ברגע ש-
+past: עבר
+shortly: בקרוב
+soon: בהקדם
+still: עדיין
+then: אז
+to begin with: בתור התחלה
+until: עד ש-
+until now: עד עתה
+when: כאשר
+whenever: כש-
+yet: עדיין
+in spite of: למרות
+nevertheless: למרות זאת
+and: ו-
+but: אבל, חוץ מ-
+including: כולל
+moreover: זאת ועוד
+together with: יחד עם
+too: גם
+with: עם
+without: ללא
+both... and...: גם וגם
+however: בכל דרך
+in fact: למעשה
+just as... so...: בדיוק כמו
+mainly: בעיקר
+not only... but also...: לא רק אלא גם
+not... but...: לא אלא
+of course: כמובן
+on one hand...on the other hand: מצד אחד מצד שני
+specifically: במיוחד
+truly: באמת
+about: אודות
+as: כמו
+both: שניהם
+for example: לדוגמה
+in other words: במילים אחרות
+just as: בדיוק כמו
+like: כמו
+that: ש-
+1st - first: ראשון
+2nd - second: שני
+3rd - third: שלישי
+4th - fourth: רביעי
+5th - fifth: חמישי
+6th - sixth: שישי
+7th - seventh: שביעי
+8th - eighth: שמיני
+9th - ninth: תשיעי
+tenth - 10th: עשירי
+how: איך
+what: מה
+which: איזה
+who: מי
+whose: אשר לו
+as if: כאילו
+based on: מבוסס על
+granted (that): בהנחה ש-
+if: אם
+in case: במקרה
+in order to: כדי
+only: רק
+so long as: כל עוד
+while: כל עוד
+always: תמיד
+daily: יומיומי
+every day: כל יום
+forever: לתמיד
+from time to time: מפעם לפעם
+mostly: לרוב
+never: אף פעם
+often: לעיתים קרובות
+rarely: לעיתים נדירות
+regularly: באופן קבוע
+usually: בדרך כלל
+according: לפי
+for: עבור
+in that case: במקרה הזה
+so: אז
+so that: כך ש-
+then: אז
+after all: אחרי הכל
+all in all: בסך הכל
+in a word: במילה אחת
+in conclusion: לסיכום
+in fact: למעשה
+because: בגלל
+because of: בגלל
+in light of: לאור
+owing to: הודות ל-
+thanks to: תודות ל-
+why: מדוע
+but: אך
+there: שם
+again: שוב
+also: גם
+coupled with: יחד עם
+not only: לא רק
+especially: במיוחד

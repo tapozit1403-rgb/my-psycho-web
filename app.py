@@ -2,10 +2,10 @@ import streamlit as st
 import random
 import os
 
-# הגדרות דף ועיצוב
-st.set_page_config(page_title="פסיכומטרי Master 🚀", page_icon="🚀", layout="centered")
+# הגדרות דף
+st.set_page_config(page_title="פסיכומטרי Master 🚀", page_icon="🚀")
 
-# פונקציה לטעינת מילים מתוך words.txt
+# טעינת מילים
 def load_words():
     vocab = {}
     if os.path.exists("words.txt"):
@@ -18,71 +18,59 @@ def load_words():
 
 vocabulary = load_words()
 
-# אתחול משתני המערכת (Session State)
-if 'correct_count' not in st.session_state:
-    st.session_state.correct_count = 0
-if 'wrong_count' not in st.session_state:
-    st.session_state.wrong_count = 0
-if 'answered' not in st.session_state:
-    st.session_state.answered = False
-if 'target' not in st.session_state:
+# ניהול מצב (Session State)
+if 'correct' not in st.session_state: st.session_state.correct = 0
+if 'wrong' not in st.session_state: st.session_state.wrong = 0
+if 'show_party' not in st.session_state: st.session_state.show_party = False
+if 'target' not in st.session_state: 
     st.session_state.target = random.choice(list(vocabulary.keys())) if vocabulary else ""
 
-# פונקציה למעבר למילה הבאה
-def next_word():
-    if vocabulary:
-        st.session_state.target = random.choice(list(vocabulary.keys()))
-    st.session_state.answered = False
+def next_question():
+    st.session_state.target = random.choice(list(vocabulary.keys()))
+    st.session_state.show_party = False
 
-# --- תצוגת צד (Sidebar) לניקוד ---
-st.sidebar.title("📊 לוח תוצאות")
-st.sidebar.divider()
-st.sidebar.metric("✅ תשובות נכונות", st.session_state.correct_count)
-st.sidebar.metric("❌ טעויות", st.session_state.wrong_count)
+# --- חגיגה! (מופיע בראש הדף אם צדקת) ---
+if st.session_state.show_party:
+    st.balloons() # בלונים
+    st.snow()     # שלג ליתר ביטחון
 
-total = st.session_state.correct_count + st.session_state.wrong_count
-if total > 0:
-    accuracy = (st.session_state.correct_count / total) * 100
-    st.sidebar.write(f"דיוק: {accuracy:.1f}%")
-
-if st.sidebar.button("אפס נתונים"):
-    st.session_state.correct_count = 0
-    st.session_state.wrong_count = 0
+# --- תצוגת צד ---
+st.sidebar.title("📊 ניקוד")
+st.sidebar.metric("✅ הצלחות", st.session_state.correct)
+st.sidebar.metric("❌ טעויות", st.session_state.wrong)
+if st.sidebar.button("איפוס"):
+    st.session_state.correct = 0
+    st.session_state.wrong = 0
     st.rerun()
 
 # --- גוף האתר ---
 st.title("🚀 פסיכומטרי Master")
 
-if not vocabulary:
-    st.error("לא נמצאו מילים בקובץ words.txt. וודא שהקובץ קיים ב-GitHub.")
-else:
+if vocabulary:
     target = st.session_state.target
-    correct_def = vocabulary[target]
+    answer = vocabulary[target]
 
-    st.subheader(f"איך אומרים בעברית: **{target}**?")
+    st.subheader(f"מה זה: **{target}**?")
 
-    # יצירת אפשרויות (מסיחים)
-    all_defs = list(set(vocabulary.values()))
-    if correct_def in all_defs: all_defs.remove(correct_def)
-    distractors = random.sample(all_defs, min(3, len(all_defs)))
-    options = distractors + [correct_def]
-    random.shuffle(options)
+    # יצירת תשובות
+    if 'options' not in st.session_state or not st.session_state.show_party:
+        others = list(set(vocabulary.values()))
+        if answer in others: others.remove(answer)
+        st.session_state.options = random.sample(others, min(3, len(others))) + [answer]
+        random.shuffle(st.session_state.options)
 
-    # כפתורי תשובה
-    for opt in options:
-        # הכפתורים ננעלים אחרי לחיצה כדי שלא ילחצו פעמיים
-        if st.button(opt, use_container_width=True, key=opt, disabled=st.session_state.answered):
-            st.session_state.answered = True
-            if opt == correct_def:
-                st.balloons() # הבלונים מופיעים כאן!
-                st.session_state.correct_count += 1
-                st.success(f"נכון מאוד! {target} זה {correct_def}")
+    # הצגת כפתורים
+    for opt in st.session_state.options:
+        if st.button(opt, use_container_width=True, disabled=st.session_state.show_party):
+            if opt == answer:
+                st.session_state.correct += 1
+                st.session_state.show_party = True # מדליק את החגיגה
+                st.rerun()
             else:
-                st.session_state.wrong_count += 1
-                st.error(f"טעות... {target} פירושו: {correct_def}")
-            
-            st.rerun() # מרענן כדי לעדכן את הניקוד בצד מיד
+                st.session_state.wrong += 1
+                st.error(f"טעות! {target} = {answer}")
 
-    # כפתור מעבר למילה הבאה (מופיע רק אחרי שענו)
-    if st.session_state.answered:
-        st.button("המילה הבאה ➡️", on_click=next_word, type="primary", use_container_width=True)
+    # כפתור מעבר מילה
+    if st.session_state.show_party:
+        st.success(f"בול! {target} זה {answer}")
+        st.button("למילה הבאה ➡️", on_click=next_question, type="primary", use_container_width=True)

@@ -2,8 +2,10 @@ import streamlit as st
 import random
 import os
 
-st.set_page_config(page_title="פסיכומטרי Master", page_icon="🚀")
+# הגדרות דף
+st.set_page_config(page_title="פסיכומטרי Master 🚀", page_icon="🚀")
 
+# פונקציה לטעינת מילים
 def load_words():
     vocab = {}
     if os.path.exists("words.txt"):
@@ -16,35 +18,54 @@ def load_words():
 
 vocabulary = load_words()
 
-if not vocabulary:
-    st.error("לא נמצאו מילים ב-words.txt")
-else:
-    if 'target' not in st.session_state:
-        st.session_state.target = random.choice(list(vocabulary.keys()))
-        st.session_state.score = 0
+# אתחול משתני מערכת (Session State)
+if 'score' not in st.session_state:
+    st.session_state.score = 0
+if 'answered_correctly' not in st.session_state:
+    st.session_state.answered_correctly = False
+if 'target' not in st.session_state:
+    st.session_state.target = random.choice(list(vocabulary.keys()))
 
-    st.title("🚀 פסיכומטרי Master")
-    
-    target = st.session_state.target
-    correct = vocabulary[target]
-    
-    st.subheader(f"מה הפירוש של: {target}?")
-    
-    other_defs = [v for k, v in vocabulary.items() if v != correct]
-    options = random.sample(other_defs, min(3, len(other_defs))) + [correct]
-    random.shuffle(options)
+def next_word():
+    st.session_state.target = random.choice(list(vocabulary.keys()))
+    st.session_state.answered_correctly = False
 
-    for opt in options:
-        if st.button(opt, use_container_width=True):
-            if opt == correct:
-                st.balloons()
-                st.success("נכון!")
-                st.session_state.score += 1
-            else:
-                st.error(f"טעות... הפירוש הוא {correct}")
-            
-            if st.button("למילה הבאה"):
-                st.session_state.target = random.choice(list(vocabulary.keys()))
-                st.rerun()
+# עיצוב הכותרת
+st.title("🚀 פסיכומטרי Master")
+st.write("תרגול מילים חכם וממוקד")
 
-    st.sidebar.write(f"ניקוד: {st.session_state.score}")
+target = st.session_state.target
+correct = vocabulary[target]
+
+# הצגת השאלה
+st.subheader(f"מה הפירוש של: **{target}**?")
+
+# יצירת מסיחים (תשובות לא נכונות)
+all_defs = list(set(vocabulary.values()))
+if correct in all_defs: all_defs.remove(correct)
+distractors = random.sample(all_defs, min(3, len(all_defs)))
+options = distractors + [correct]
+random.shuffle(options)
+
+# הצגת כפתורי התשובות
+# אם המשתמש כבר ענה נכון, ננעל את הכפתורים כדי שלא ילחץ שוב
+for opt in options:
+    if st.button(opt, use_container_width=True, disabled=st.session_state.answered_correctly, key=opt):
+        if opt == correct:
+            st.session_state.answered_correctly = True
+            st.session_state.score += 1
+            st.balloons()
+            st.rerun()
+        else:
+            st.error(f"טעות... הפירוש של {target} הוא: {correct}")
+
+# הצגת כפתור "המילה הבאה" - מופיע רק אחרי תשובה נכונה
+if st.session_state.answered_correctly:
+    st.success(f"כל הכבוד! {target} = {correct}")
+    st.button("המילה הבאה ➡️", on_click=next_word, type="primary", use_container_width=True)
+
+# סטטיסטיקה בצד
+st.sidebar.metric("מילים שבוצעו", st.session_state.score)
+if st.sidebar.button("אפס ניקוד"):
+    st.session_state.score = 0
+    st.rerun()
